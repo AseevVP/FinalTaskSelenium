@@ -18,6 +18,17 @@ class ProductPageLocators():
     ADDED_BOOK = (By.CSS_SELECTOR, '#messages > div:nth-child(1) > div > strong')
     ADDED_PRICE = (
         By.CSS_SELECTOR,
-           '#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > p:nth-child(1) > strong')
+        '#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > p:nth-child(1) > strong')
+    SUCCESS_MESSAGE = (By.CLASS_NAME, 'alertinner')
 
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET = (
+        By.CSS_SELECTOR, '#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a')
+
+
+class BasketPageLocators():
+    EMPTY_BASKET = (By.CSS_SELECTOR, '#content_inner > p')
+    NOT_EMPTY_BASKET = (By.XPATH, '//*[@id="content_inner"]/div[1]/div/h2')
