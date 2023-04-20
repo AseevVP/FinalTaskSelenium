@@ -9,7 +9,7 @@ class ProductPage(BasePage):
     def add_product_to_the_basket(self):
         WebDriverWait(self.browser, 12).until(
             EC.presence_of_element_located(ProductPageLocators.ADD_TO_BASKET)).click()
-        solve_quiz_and_get_code(self)
+        # solve_quiz_and_get_code(self)
         time.sleep(5)
 
     def should_book_name_equals_hints_name(self):

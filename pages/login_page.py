@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 from .base_page import BasePage
 from .locators import LoginPageLocators
 
@@ -23,3 +25,9 @@ class LoginPage(BasePage):
         header = self.browser.find_element(*LoginPageLocators.REGISTRATION_FORM).text
         print(header)
         assert header == 'Зарегистрироваться', 'The Registration form is unavailable'
+
+    def register_new_user(self, email, password):
+        self.browser.find_element(By.ID, 'id_registration-email').send_keys(email)
+        self.browser.find_element(By.ID, 'id_registration-password1').send_keys(password)
+        self.browser.find_element(By.ID, 'id_registration-password2').send_keys(password)
+        self.browser.find_element(By.NAME, 'registration_submit').click()
